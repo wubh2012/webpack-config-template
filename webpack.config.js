@@ -6,10 +6,10 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const APPDIR = 'src/';
 
 module.exports = env => {
-  console.log('NODE_ENV: ', env.NODE_ENV); // 'dev' or production
-  const devMode = env.NODE_ENV !== 'production';
+  console.log('mode', env.mode) // development, production
+  const devMode = env.mode !== 'production';
   return {
-    mode: devMode ? 'development' : 'production',
+    mode: env.mode,
     entry: {
       app: './src/index.js',
     },
