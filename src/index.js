@@ -2,7 +2,7 @@
 function component() {
   let element = document.createElement('div');
 
-  element.innerHTML = Array.prototype.join(['Hello', 'webpack'], ' ');
+  element.innerHTML = ['Hello', 'webpack'].join(' ');
 
   return element;
 }
