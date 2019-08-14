@@ -1,4 +1,3 @@
-import './style.css'
 import './main.scss'
 
 function component() {
@@ -8,5 +7,5 @@ function component() {
 
   return element;
 }
-
+console.log('run')
 document.body.appendChild(component());
