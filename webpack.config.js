@@ -1,4 +1,7 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const APPDIR = 'src/';
 
 module.exports = {
   mode: 'development',
@@ -21,5 +24,13 @@ module.exports = {
         ]
       }
     ]
-  }
+  },
+  plugins: [
+    new CleanWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, APPDIR, 'index.html'),
+      filename: 'index.html',
+      inject: 'body'
+    })
+  ],
 };
